@@ -7,7 +7,7 @@
 
 ## Demo
 
-See AlphaCalc.js in action on our [demo site](https://mbcalc.webflow.io/).
+See AlphaCalc.js in action on our [WEBFLOW DEMO](https://alphacalc-js.webflow.io/), [WEBFLOW READ-ONLY](https://preview.webflow.com/preview/alphacalc-js?utm_medium=preview_link&utm_source=designer&utm_content=alphacalc-js&preview=1b5cec2a238a9836f4068a312194ce2e&workflow=preview).
 
 ## Overview
 
