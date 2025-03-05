@@ -1,6 +1,8 @@
 # AlphaCalc.js
 
-> Turn your static Webflow forms into dynamic calculators without writing a single line of code.
+**Build Complex Calculators with Simple Attributes in Webflow** 
+
+Build and manage complex Webflow calculators in minutes with AlphaCalc.js. Just add simple attributes – no JavaScript needed. Save time, launch faster, and boost your earnings with mortgage, pricing, and ROI calculators made easy.
 
 ![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
