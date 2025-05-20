@@ -162,7 +162,7 @@ AlphaCalc supports various input types:
 <input data-alphacalc-input="feature1" data-alphacalc-group="features" type="checkbox" data-alphacalc-value="5"> Feature 1 (+$5)
 ```
 
-### 2. Real-Time Formulas
+### 3. Real-Time Formulas
 
 Display calculation results with simple formulas:
 
@@ -174,7 +174,7 @@ Display calculation results with simple formulas:
 <div data-alphacalc-output="= (subtotal * (1 + tax/100)) + shipping">129.50</div>
 ```
 
-### 3. Custom Configurations
+### 4. Custom Configurations
 
 Add calculator configurations:
 
@@ -191,7 +191,7 @@ Add calculator configurations:
 </div>
 ```
 
-### 4. Loading Indicators & Active States
+### 5. Loading Indicators & Active States
 
 Show activity during calculations:
 
