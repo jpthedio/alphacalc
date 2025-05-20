@@ -594,12 +594,15 @@
                     if (option) {
                         element.value = option.value
                     }
-                } else if (
-                    elementType === 'radio' ||
-                    elementType === 'checkbox'
-                ) {
-                    // For toggle elements, set checked property
-                    const elementValue = this.getToggleValue(element)
+               } else if (
+                   elementType === 'radio' ||
+                   elementType === 'checkbox'
+               ) {
+                   // For toggle elements, set checked property
+                    const elementRawValue = element.hasAttribute('data-alphacalc-value')
+                        ? element.getAttribute('data-alphacalc-value')
+                        : element.value
+                    const elementValue = Util.parseNumeric(elementRawValue)
                     element.checked = Math.abs(elementValue - value) < 0.001
                 } else {
                     // Regular input
