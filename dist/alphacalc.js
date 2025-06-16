@@ -138,6 +138,16 @@
         },
 
         /**
+         * Remove a leading equals sign from a string if present
+         */
+        stripEquals(value) {
+            if (typeof value === 'string' && value.startsWith('=')) {
+                return value.substring(1)
+            }
+            return value
+        },
+
+        /**
          * Format a number according to options
          */
         formatNumber(value, options = {}) {
@@ -843,9 +853,7 @@
             // Get value based on source type
             if (isFormula) {
                 // For formula getters, evaluate the formula
-                const formula = sourceId.startsWith('=')
-                    ? sourceId.substring(1)
-                    : sourceId
+                const formula = Util.stripEquals(sourceId)
                 value = this.calculator.formulaEngine.evaluate(
                     formula,
                     Object.fromEntries(this.calculator.inputManager.inputValues)
@@ -1748,7 +1756,7 @@
 
                     // Check if it starts with equals sign (explicit formula)
                     if (attrValue.startsWith('=')) {
-                        formula = attrValue.substring(1)
+                        formula = Util.stripEquals(attrValue)
                         formulaSource = 'equals-prefix'
                         this.debugLog(
                             `Found formula via equals prefix: ${formula}`
@@ -1953,9 +1961,7 @@
                     let sourceValue = ''
                     if (isFormula) {
                         // For formula getters, use the formula result
-                        const formula = sourceId.startsWith('=')
-                            ? sourceId.substring(1)
-                            : sourceId
+                        const formula = Util.stripEquals(sourceId)
                         sourceValue = this.formulaEngine.evaluate(
                             formula,
                             Object.fromEntries(this.inputManager.inputValues)
