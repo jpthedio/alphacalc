@@ -843,7 +843,9 @@
             // Get value based on source type
             if (isFormula) {
                 // For formula getters, evaluate the formula
-                const formula = sourceId.substring(1) // Remove = prefix
+                const formula = sourceId.startsWith('=')
+                    ? sourceId.substring(1)
+                    : sourceId
                 value = this.calculator.formulaEngine.evaluate(
                     formula,
                     Object.fromEntries(this.calculator.inputManager.inputValues)
@@ -1951,7 +1953,9 @@
                     let sourceValue = ''
                     if (isFormula) {
                         // For formula getters, use the formula result
-                        const formula = sourceId.substring(1) // Remove = prefix
+                        const formula = sourceId.startsWith('=')
+                            ? sourceId.substring(1)
+                            : sourceId
                         sourceValue = this.formulaEngine.evaluate(
                             formula,
                             Object.fromEntries(this.inputManager.inputValues)

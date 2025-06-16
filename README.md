@@ -166,12 +166,17 @@ AlphaCalc supports various input types:
 
 Display calculation results with simple formulas:
 
+Formulas are detected automatically if the attribute contains math operators.
+You can start the value with an `=` for clarity, but it's optional.
+
 ```html
 <!-- Basic arithmetic -->
 <div data-alphacalc-output="= price * quantity">200</div>
 
 <!-- Complex formulas -->
 <div data-alphacalc-output="= (subtotal * (1 + tax/100)) + shipping">129.50</div>
+<!-- Without '=' prefix -->
+<div data-alphacalc-output="price * quantity">200</div>
 ```
 
 ### 3. Custom Configurations
