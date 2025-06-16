@@ -1748,7 +1748,9 @@
 
                     // Check if it starts with equals sign (explicit formula)
                     if (attrValue.startsWith('=')) {
-                        formula = attrValue.substring(1)
+                        formula = attrValue.startsWith('=')
+                            ? attrValue.substring(1)
+                            : attrValue
                         formulaSource = 'equals-prefix'
                         this.debugLog(
                             `Found formula via equals prefix: ${formula}`
