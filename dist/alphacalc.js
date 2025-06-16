@@ -1953,7 +1953,9 @@
                     let sourceValue = ''
                     if (isFormula) {
                         // For formula getters, use the formula result
-                        const formula = sourceId.substring(1) // Remove = prefix
+                        const formula = sourceId.startsWith('=')
+                            ? sourceId.substring(1)
+                            : sourceId
                         sourceValue = this.formulaEngine.evaluate(
                             formula,
                             Object.fromEntries(this.inputManager.inputValues)
